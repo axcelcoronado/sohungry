@@ -1,5 +1,5 @@
-import Platos from './Platos';
+import cartaPlato from './CartaPlato';
 
 export default {
-    Platos,
+    cartaPlato,
 };
