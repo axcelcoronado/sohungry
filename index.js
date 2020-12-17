@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path'
 import mongoose from 'mongoose';
+import router from './routers';
 
 const app = express();
 
@@ -23,6 +24,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('port', process.env.PORT || 3000);
+
+//rutas de la base de datos
+app.use('/api', router);
 
 app.listen(app.get('port'), () => {
     console.log('server on port 3000');
